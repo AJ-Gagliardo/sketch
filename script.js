@@ -5,17 +5,34 @@ const tile = document.createElement('div');
 tile.classList.add('tile');
 
 tile.addEventListener("click", function(){
-startPainting();
+startPainting(this);
 });
 
-function startPainting(){
-tile.style['background-color']= 'blue';
+function startPainting(clickedTile){
+clickedTile.style['background-color']= 'blue';
 
 }
 
+//testing
+
+
+const tile2 = document.createElement('div');
+tile2.classList.add('tile');
 
 const container = document.querySelector('.container');
 container.appendChild(tile);
+
+console.log(tile)
+
+const existingTiles = document.querySelectorAll('.tile');
+console.log(existingTiles)
+
+existingTiles.forEach(indvTile => {
+    indvTile.addEventListener("click", function(){
+        startPainting(indvTile);
+        });
+    
+});
 
 
 
