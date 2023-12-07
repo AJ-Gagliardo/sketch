@@ -4,11 +4,18 @@ console.log('hello world');
 const tile = document.createElement('div');
 tile.classList.add('tile');
 
+tile.addEventListener("click", function(){
+startPainting();
+});
+
+function startPainting(){
+tile.style['background-color']= 'blue';
+
+}
 
 
-const grid = document.querySelector('.grid');
-grid.appendChild(tile);
-grid.appendChild(tile);
+const container = document.querySelector('.container');
+container.appendChild(tile);
 
 
 

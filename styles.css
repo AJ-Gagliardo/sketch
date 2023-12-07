@@ -4,8 +4,14 @@ body{
 
 
 .tile{
-width:2rem;
+width:2rem; 
 height:2rem;
-
 background-color: white;
+
+
 }
+
+.tile:hover{
+    filter:brightness(90%);
+}
+
