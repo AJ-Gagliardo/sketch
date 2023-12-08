@@ -1,38 +1,77 @@
-console.log('hello world');
 
 
+
+// Create a tile 
 const tile = document.createElement('div');
 tile.classList.add('tile');
 
+
+// event listener to paint when clicked
 tile.addEventListener("click", function(){
 startPainting(this);
 });
 
+// function to paint
+
 function startPainting(clickedTile){
 clickedTile.style['background-color']= 'blue';
-
 }
+
+// }
+
+// Function to create a tile
+function createTile(){
+    const tile = document.createElement('div');
+    tile.classList.add('tile');
+    tile.addEventListener("click",function(){
+        startPainting(this);
+    })
+    return tile;
+}
+
+// tool I am thinkin on using to see if the tiles are being created or not
+let tileQuantity = document.querySelectorAll('.tile');
+
+
+// testing to see if the tile adheres to the container
+const container = document.querySelector('.container');
+container.appendChild(tile);
+
+
+// To see the created tiles
+
+const existingTiles = document.querySelectorAll('.tile');
+
+
+    existingTiles.forEach(indvTile => {
+        indvTile.addEventListener("click", function(){
+            startPainting(indvTile);
+        });
+        
+    });
+
+    
+
+
 
 //testing
 
 
-const tile2 = document.createElement('div');
-tile2.classList.add('tile');
 
-const container = document.querySelector('.container');
-container.appendChild(tile);
 
-console.log(tile)
 
-const existingTiles = document.querySelectorAll('.tile');
-console.log(existingTiles)
 
-existingTiles.forEach(indvTile => {
-    indvTile.addEventListener("click", function(){
-        startPainting(indvTile);
-        });
-    
-});
+
+//(a for loop to create various tiles)
+let rows = 6;
+
+for (let nRows = 0; nRows < rows; nRows++){
+    createTile();
+}
+
+
+// make tiles individual
+
 
 
 
