@@ -109,6 +109,17 @@ container.addEventListener("mousedown", function(){
     console.log(isPainting)
 })
 
+container.addEventListener("mousemove",function(event){
+    if (isPainting === true) {
+        const tile = event.target;
+        startPainting(tile)
+    }
+})
+
+container.addEventListener("mouseup", function(){
+    isPainting = false;
+})
+
 
 
 
