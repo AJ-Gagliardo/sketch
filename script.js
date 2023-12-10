@@ -17,7 +17,7 @@
 // function to paint
 
 function startPainting(clickedTile){
-clickedTile.style['background-color']= 'blue';
+clickedTile.style['background-color']= currentColor;
 }
 
 // }
@@ -26,8 +26,8 @@ clickedTile.style['background-color']= 'blue';
 function createTile(){
     const tile = document.createElement('div');
     tile.classList.add('tile');
-    tile.addEventListener("click",function(){
-        startPainting(this);
+    tile.addEventListener("mousedown",function(event){
+        startPainting(event.target);
     })
     return tile;
 }
@@ -48,7 +48,7 @@ const existingTiles = document.querySelectorAll('.tile');
 
 
     existingTiles.forEach(indvTile => {
-        indvTile.addEventListener("click", function(){
+        indvTile.addEventListener("mousedown", function(){
             startPainting(indvTile);
         });
         
@@ -56,6 +56,7 @@ const existingTiles = document.querySelectorAll('.tile');
 
     
 
+    // later on for size of the tiles I probably have to do  NumOfTiles / SizeOfGrid 
 
 
 //testing
@@ -98,9 +99,15 @@ for(let nRows= 0; nRows < rows; nRows++){
 
 
 
+// Variables and function for painting
+let isPainting = false;
 
-// make tiles individual
+let currentColor = 'blue'
 
+container.addEventListener("mousedown", function(){
+    isPainting = true;
+    console.log(isPainting)
+})
 
 
 
