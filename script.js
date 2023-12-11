@@ -14,6 +14,12 @@
 // startPainting(this);
 // });
 
+
+
+// number of rows for ym functions
+let rows = 16;
+
+
 // function to paint
 
 function startPainting(clickedTile){
@@ -26,7 +32,10 @@ clickedTile.style['background-color']= currentColor;
 function createTile(){
     const tile = document.createElement('div');
     tile.classList.add('tile');
+    tile.style.width = (container.clientWidth / rows)+'px';
+    tile.style.height = (container.clientHeight / rows)+'px';
     tile.addEventListener("mousedown",function(event){
+        console.log(event)
         startPainting(event.target);
     })
     return tile;
@@ -69,7 +78,7 @@ const existingTiles = document.querySelectorAll('.tile');
 
 
 //(a for loop to create various tiles)
-let rows = 6;
+
 
 
 // row.classList.add('row');
@@ -132,3 +141,7 @@ container.addEventListener("mouseup", function(){
 
 // range would be what the user asks the amount of tiles to be
 // then I would also need to put at the begining of the function to reset all colors and actions with the div
+
+
+// for the size and tiles i guess i coul do Height of grid(container) divided by number of tiles I will have per column 
+// for width of tile based on the same logic it would be width of the container (the grid) and divide it by the number of tiles on each row.

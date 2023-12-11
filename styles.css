@@ -33,6 +33,9 @@ background-color: white;
     justify-self: center;
     justify-items: center;
     justify-self:center;
+    /* max-width: 600px; */
+    width:666.9px;
+    height:600px;
 }
 
 h1{
