@@ -22,7 +22,9 @@ input.addEventListener('change', function(event){
     let rowsColumns=event.target.value;
     console.log(rowsColumns);
     rows =  rowsColumns;
-    
+    deleteGrid();
+    createGrid();
+
 })
 
 // number of rows for ym functions
@@ -62,16 +64,26 @@ const container = document.querySelector('.container');
 
 // To see the created tiles
 
-const existingTiles = document.querySelectorAll('.tile');
+// const existingTiles = document.querySelectorAll('.tile');
 
 
+//     existingTiles.forEach(indvTile => {
+//         indvTile.addEventListener("mousedown", function(){
+//             startPainting(indvTile);
+//         });
+        
+//     });
+
+
+function allowPaint(){
+    const existingTiles = document.querySelectorAll('.tile');
     existingTiles.forEach(indvTile => {
         indvTile.addEventListener("mousedown", function(){
             startPainting(indvTile);
         });
         
     });
-
+}
     
 
     // later on for size of the tiles I probably have to do  NumOfTiles / SizeOfGrid 
@@ -102,10 +114,21 @@ function createRow(){
     return row;
 }
 
-for(let nRows= 0; nRows < rows; nRows++){
-    createRow();
-    container.appendChild(createRow());
+function createGrid(){
 
+    for(let nRows= 0; nRows < rows; nRows++){
+        createRow();
+        container.appendChild(createRow());
+        
+    }
+}
+
+function deleteGrid(){
+    const existingTiles = document.querySelectorAll('.tile');
+    existingTiles.forEach(indvTile => {
+        indvTile.parentNode.removeChild(indvTile);
+
+      })
 }
 
 
