@@ -15,6 +15,7 @@
 
 let rows = 16 ;
 
+
 const input = document.getElementById('tilesRowsNColumns') ;
 console.log(input);
 
@@ -73,7 +74,7 @@ const container = document.querySelector('.container');
 //         });
         
 //     });
-
+// const existingTiles = document.querySelectorAll('.tile')
 
 function allowPaint(){
     const existingTiles = document.querySelectorAll('.tile');
@@ -122,6 +123,9 @@ function createGrid(){
         
     }
 }
+
+createGrid();
+
 
 function deleteGrid(){
     const existingTiles = document.querySelectorAll('.tile');
