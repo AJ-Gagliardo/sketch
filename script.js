@@ -1,6 +1,5 @@
 
 
-
 // Create a tile 
 // will probably delete this soon, this was just for testing purpose
 // const tile = document.createElement('div');
@@ -15,9 +14,13 @@
 // });
 
 
+let input = document.getElementById('tilesRowsNColumns').value ;
+console.log(input);
+
+// input.addEventListener('change', function(event))
 
 // number of rows for ym functions
-let rows = 16;
+let rows = 16 ;
 
 
 // function to paint
@@ -27,6 +30,9 @@ clickedTile.style['background-color']= currentColor;
 }
 
 // }
+function trigger(event) {
+    startPainting(event.target)
+}
 
 // Function to create a tile
 function createTile(){
@@ -34,10 +40,7 @@ function createTile(){
     tile.classList.add('tile');
     tile.style.width = (container.clientWidth / rows)+'px';
     tile.style.height = (container.clientHeight / rows)+'px';
-    tile.addEventListener("mousedown",function(event){
-        console.log(event)
-        startPainting(event.target);
-    })
+    tile.addEventListener("mousedown", trigger)
     return tile;
 }
 
