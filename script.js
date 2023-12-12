@@ -13,14 +13,20 @@
 // startPainting(this);
 // });
 
+let rows = 16 ;
 
-let input = document.getElementById('tilesRowsNColumns').value ;
+const input = document.getElementById('tilesRowsNColumns') ;
 console.log(input);
 
-// input.addEventListener('change', function(event))
+input.addEventListener('change', function(event){
+    let rowsColumns=event.target.value;
+    console.log(rowsColumns);
+    rows =  rowsColumns;
+    
+})
 
 // number of rows for ym functions
-let rows = 16 ;
+
 
 
 // function to paint
