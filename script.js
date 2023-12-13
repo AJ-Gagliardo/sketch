@@ -17,7 +17,7 @@ let rows = 16 ;
 
 
 const input = document.getElementById('tilesRowsNColumns') ;
-console.log(input);
+
 
 input.addEventListener('change', function(event){
     let rowsColumns=event.target.value;
@@ -147,7 +147,7 @@ function deleteGrid(){
 // Variables and function for painting
 let isPainting = false;
 
-let currentColor = 'blue'
+let currentColor = 'black';
 
 container.addEventListener("mousedown", function(){
     isPainting = true;
@@ -167,6 +167,30 @@ container.addEventListener("mouseup", function(){
 
 
 
+//change colors
+
+
+const colors = document.getElementById('colors')
+
+colors.addEventListener("change", function(event){
+    let color = event.target.value;
+    currentColor = color;
+    console.log(currentColor)
+})
+
+
+const deleteEverything = document.getElementById('deleteEverything');
+deleteEverything.addEventListener("click", function(){
+    const existingTiles = document.querySelectorAll('.tile');
+    existingTiles.forEach(indvTile => {
+        indvTile.style['background-color'] = 'white';
+        })
+})
+
+
+function startPainting(clickedTile){
+    clickedTile.style['background-color']= currentColor;
+    }
 
 //TO do
 

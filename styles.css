@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: #393e46;
     margin:2rem;
 
 }
@@ -43,8 +43,13 @@ h1{
 
 }
 
-h2{
+h2, h3{
     color:beige;
+}
+
+#colors{
+
+    border: 1px;
 }
 
 .ui{
@@ -61,3 +66,8 @@ h2{
     flex:3;
 }
 
+
+#deleteEverything{
+    margin-top:1rem;
+    padding:1rem;
+}
