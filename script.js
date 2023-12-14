@@ -68,6 +68,13 @@ deleteEverything.addEventListener("click", function(){
 })
 
 
+function randomColors(){
+    const randomR = Math.floor(Math.random() * 256)
+    const randomG = Math.floor(Math.random() * 256)
+    const randomB = Math.floor(Math.random() * 256)
+    return `rgb(${randomR}, ${randomG}, ${randomB})`
+}
+
 
 // function to paint
 
@@ -77,6 +84,10 @@ function startPainting(clickedTile){
     }
     else if(erase.classList.contains('activeButton')){
         clickedTile.style['background-color']='white';
+    }
+    else if(rainbow.classList.contains('activeButton')){
+        clickedTile.style['background-color'] = randomColors();
+        
     }
 }
 
