@@ -17,11 +17,13 @@ let rows = 16 ;
 
 
 const input = document.getElementById('tilesRowsNColumns') ;
+const gridSize = document.getElementById('gridSize');
 
 
 input.addEventListener('change', function(event){
     let rowsColumns=event.target.value;
     console.log(rowsColumns);
+    gridSize.textContent = `${rowsColumns} X ${rowsColumns}` 
     rows =  rowsColumns;
     deleteGrid();
     createGrid();

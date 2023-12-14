@@ -43,7 +43,7 @@ h1{
 
 }
 
-h2, h3{
+h2, h3, p{
     color:beige;
 }
 
@@ -83,4 +83,12 @@ h2, h3{
     font-weight: 600;
     font-size:1rem;
     width:14rem;
+}
+
+P{
+
+}
+
+#gridSize{
+    margin-bottom: -1rem;
 }
