@@ -72,7 +72,12 @@ deleteEverything.addEventListener("click", function(){
 // function to paint
 
 function startPainting(clickedTile){
-clickedTile.style['background-color']= currentColor;
+    if(paint.classList.contains('activeButton')){
+        clickedTile.style['background-color']= currentColor;
+    }
+    else if(erase.classList.contains('activeButton')){
+        clickedTile.style['background-color']='white';
+    }
 }
 
 // }
@@ -187,9 +192,7 @@ colors.addEventListener("change", function(event){
 
 
 
-function startPainting(clickedTile){
-    clickedTile.style['background-color']= currentColor;
-    }
+
 
 //TO do
 
