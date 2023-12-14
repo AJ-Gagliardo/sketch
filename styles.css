@@ -74,6 +74,9 @@ h2, h3, p{
 #deleteEverything{
   
 }
+.btn:hover{
+color: gold;
+}
 
 .btn{
     margin-top:1rem;
@@ -85,6 +88,11 @@ h2, h3, p{
     width:14rem;
 }
 
+.activeButton{
+    background-color: #f95959;
+    transition:0.4s;
+}
+
 P{
 
 }
@@ -92,3 +100,8 @@ P{
 #gridSize{
     margin-bottom: -1rem;
 }
+
+#deleteEverything:active{
+    background-color: #f95959;
+}
+

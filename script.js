@@ -1,18 +1,5 @@
 
 
-// Create a tile 
-// will probably delete this soon, this was just for testing purpose
-// const tile = document.createElement('div');
-// tile.classList.add('tile');
-
-
-// event listener to paint when clicked
-// dont need this part of the code any more apparently
-
-// tile.addEventListener("click", function(){
-// startPainting(this);
-// });
-
 let rows = 16 ;
 
 
@@ -30,7 +17,55 @@ input.addEventListener('change', function(event){
 
 })
 
-// number of rows for ym functions
+// Buttons
+const allButtons = document.querySelectorAll('.btn')
+
+function deactivateButtons(){
+
+    allButtons.forEach (btn => {
+        btn.classList.remove('activeButton')
+
+    })
+
+}
+
+function activateButton(clickedButton){
+    deactivateButtons();
+    clickedButton.classList.add('activeButton')
+
+}
+
+// individual buttons
+
+const paint = document.getElementById('paint');
+console.log(paint);
+
+paint.addEventListener('click',()=>{
+    activateButton(paint);
+})
+
+const erase = document.getElementById('erase');
+console.log(erase);
+
+erase.addEventListener('click', ()=>{
+    activateButton(erase);
+})
+
+const rainbow = document.getElementById('rainbow');
+rainbow.addEventListener('click',()=>{
+    activateButton(rainbow);
+})
+
+const deleteEverything = document.getElementById('deleteEverything');
+
+deleteEverything.addEventListener("click", function(){
+    activateButton(deleteEverything)
+    const existingTiles = document.querySelectorAll('.tile');
+    existingTiles.forEach(indvTile => {
+        indvTile.style['background-color'] = 'white';
+        });
+        activateButton(paint)
+})
 
 
 
@@ -55,28 +90,12 @@ function createTile(){
     return tile;
 }
 
-// tool I am thinkin on using to see if the tiles are being created or not
-let tileQuantity = document.querySelectorAll('.tile');
 
-
-// testing to see if the tile adheres to the container
-// probably will deleate this
 const container = document.querySelector('.container');
 // container.appendChild(tile);
 
 
-// To see the created tiles
 
-// const existingTiles = document.querySelectorAll('.tile');
-
-
-//     existingTiles.forEach(indvTile => {
-//         indvTile.addEventListener("mousedown", function(){
-//             startPainting(indvTile);
-//         });
-        
-//     });
-// const existingTiles = document.querySelectorAll('.tile')
 
 function allowPaint(){
     const existingTiles = document.querySelectorAll('.tile');
@@ -89,23 +108,7 @@ function allowPaint(){
 }
     
 
-    // later on for size of the tiles I probably have to do  NumOfTiles / SizeOfGrid 
-
-
-//testing
-
-
-
-// const row = document.createElement('div');
-
-
-
-
-//(a for loop to create various tiles)
-
-
-
-// row.classList.add('row');
+ 
 
 function createRow(){
     const row = document.createElement('div');
@@ -181,13 +184,7 @@ colors.addEventListener("change", function(event){
 })
 
 
-const deleteEverything = document.getElementById('deleteEverything');
-deleteEverything.addEventListener("click", function(){
-    const existingTiles = document.querySelectorAll('.tile');
-    existingTiles.forEach(indvTile => {
-        indvTile.style['background-color'] = 'white';
-        })
-})
+
 
 
 function startPainting(clickedTile){
